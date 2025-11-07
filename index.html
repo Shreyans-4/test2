@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Skill Swap Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="https://png.pngtree.com/png-clipart/20200701/original/pngtree-remote-team-working-meeting-online-or-work-from-home-png-image_5366337.jpg" alt="Logo" />
+      <span>Skill Swap</span>
+    </div>
+    <nav>
+      <a href="#" class="active">Dashboard</a>
+      <a href="#">Find Skills</a>
+      <a href="#">My Swaps</a>
+      <a href="#">Messages</a>
+      <a href="#">Community</a>
+      <a href="#">Settings</a>
+    </nav>
+    <div class="sidebar-footer">
+      <button id="sidebar-signup" class="btn-primary">Sign Up</button>
+      <button id="sidebar-login" class="btn-secondary">Log In</button>
+    </div>
+  </aside>
+  <main>
+    <header class="main-header">
+      <h1>Welcome to Skill Swap</h1>
+      <p>Connect with peers, teach your skills, and learn something new every day. Discover ongoing swaps and trending skills below.</p>
+    </header>
+    <section class="skill-grid">
+      <div class="skill-card">
+        <img src="https://randomuser.me/api/portraits/men/23.jpg" alt="Peer Avatar" />
+        <h2>Arun Chatterjee</h2>
+        <p>Teaching: Python Programming<br>Learning: Photography</p>
+        <button class="btn-join" onclick="alert('Join Arun\'s swap')">Swap Now</button>
+      </div>
+      <div class="skill-card">
+        <img src="https://randomuser.me/api/portraits/women/92.jpg" alt="Peer Avatar" />
+        <h2>Priya Sharma</h2>
+        <p>Teaching: Baking<br>Learning: Spanish</p>
+        <button class="btn-join" onclick="alert('Join Priya\'s swap')">Swap Now</button>
+      </div>
+      <div class="skill-card">
+        <img src="https://randomuser.me/api/portraits/men/43.jpg" alt="Peer Avatar" />
+        <h2>Tom Becker</h2>
+        <p>Teaching: Guitar<br>Learning: Web Dev</p>
+        <button class="btn-join" onclick="alert('Join Tom\'s swap')">Swap Now</button>
+      </div>
+      <div class="skill-card">
+        <img src="https://randomuser.me/api/portraits/women/77.jpg" alt="Peer Avatar" />
+        <h2>Marie Durand</h2>
+        <p>Teaching: French<br>Learning: Yoga</p>
+        <button class="btn-join" onclick="alert('Join Marie\'s swap')">Swap Now</button>
+      </div>
+      <!-- Add more cards as needed -->
+    </section>
+    <section class="cta-banner">
+      <h2>Start a New Skill Swap Today</h2>
+      <button class="btn-primary" id="banner-signup">Begin Your Journey →</button>
+    </section>
+  </main>
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="modal-box" id="modal-box">
+      <span class="close-modal" id="close-modal">&times;</span>
+    </div>
+  </div>
+  <script>
+    function openModal(mode) {
+      document.getElementById('modal').classList.add('active');
+      let content = '';
+      if (mode === 'signup') {
+        content = `
+          <span class="close-modal" id="close-modal">&times;</span>
+          <h2>Sign Up</h2>
+          <label>Name</label>
+          <input type="text" placeholder="Full Name" />
+          <label>Email</label>
+          <input type="email" placeholder="your@email.com" />
+          <label>Password</label>
+          <input type="password" placeholder="Choose a password" />
+          <button onclick="alert('Account created!')">Sign Up</button>
+          <p><small>Already a member? <a href="#" id="modal-switch-login">Log in</a></small></p>
+        `;
+      } else {
+        content = `
+          <span class="close-modal" id="close-modal">&times;</span>
+          <h2>Log In</h2>
+          <label>Email</label>
+          <input type="email" placeholder="your@email.com" />
+          <label>Password</label>
+          <input type="password" placeholder="••••••••" />
+          <button onclick="alert('Logged In!')">Log In</button>
+          <p><small>New here? <a href="#" id="modal-switch-signup">Sign up</a></small></p>
+        `;
+      }
+      const modalBox = document.getElementById('modal-box');
+      modalBox.innerHTML = content;
+      setTimeout(() => {
+        document.getElementById('close-modal').onclick = function() {
+          document.getElementById('modal').classList.remove('active');
+        };
+        const switchSignup = document.getElementById('modal-switch-signup');
+        if (switchSignup) switchSignup.onclick = function(e) {
+          e.preventDefault(); openModal('signup');
+        };
+        const switchLogin = document.getElementById('modal-switch-login');
+        if (switchLogin) switchLogin.onclick = function(e) {
+          e.preventDefault(); openModal('login');
+        };
+      }, 50);
+    }
+    document.getElementById('sidebar-signup').onclick = function() { openModal('signup'); };
+    document.getElementById('sidebar-login').onclick = function() { openModal('login'); };
+    document.getElementById('banner-signup').onclick = function() { openModal('signup'); };
+  </script>
+</body>
+</html>
