@@ -2,121 +2,167 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>Skill Swap Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skill Swap – Modern & Animated</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="1stLINK.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <aside class="sidebar">
-    <div class="brand">
-      <img src="https://png.pngtree.com/png-clipart/20200701/original/pngtree-remote-team-working-meeting-online-or-work-from-home-png-image_5366337.jpg" alt="Logo" />
-      <span>Skill Swap</span>
+  <!-- Animated Universal Background -->
+  <div class="animated-bg"></div>
+
+  <header class="navbar">
+    <div class="logo">
+      <img src="https://png.pngtree.com/png-clipart/20200701/original/pngtree-remote-team-working-meeting-online-or-work-from-home-png-image_5366337.jpg" alt="Skill Swap Logo" />
+      <span>Skill <strong>Swap</strong></span>
     </div>
-    <nav>
-      <a href="#" class="active">Dashboard</a>
-      <a href="#">Find Skills</a>
-      <a href="#">My Swaps</a>
-      <a href="#">Messages</a>
-      <a href="#">Community</a>
-      <a href="#">Settings</a>
+    <nav class="nav-links">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Docs</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
     </nav>
-    <div class="sidebar-footer">
-      <button id="sidebar-signup" class="btn-primary">Sign Up</button>
-      <button id="sidebar-login" class="btn-secondary">Log In</button>
+    <div class="auth-buttons">
+      <a href="#" class="login" id="open-login">Log In</a>
+      <a href="#" class="signup" id="open-signup">Sign Up</a>
     </div>
-  </aside>
-  <main>
-    <header class="main-header">
-      <h1>Welcome to Skill Swap</h1>
-      <p>Connect with peers, teach your skills, and learn something new every day. Discover ongoing swaps and trending skills below.</p>
-    </header>
-    <section class="skill-grid">
-      <div class="skill-card">
-        <img src="https://randomuser.me/api/portraits/men/23.jpg" alt="Peer Avatar" />
-        <h2>Arun Chatterjee</h2>
-        <p>Teaching: Python Programming<br>Learning: Photography</p>
-        <button class="btn-join" onclick="alert('Join Arun\'s swap')">Swap Now</button>
-      </div>
-      <div class="skill-card">
-        <img src="https://randomuser.me/api/portraits/women/92.jpg" alt="Peer Avatar" />
-        <h2>Priya Sharma</h2>
-        <p>Teaching: Baking<br>Learning: Spanish</p>
-        <button class="btn-join" onclick="alert('Join Priya\'s swap')">Swap Now</button>
-      </div>
-      <div class="skill-card">
-        <img src="https://randomuser.me/api/portraits/men/43.jpg" alt="Peer Avatar" />
-        <h2>Tom Becker</h2>
-        <p>Teaching: Guitar<br>Learning: Web Dev</p>
-        <button class="btn-join" onclick="alert('Join Tom\'s swap')">Swap Now</button>
-      </div>
-      <div class="skill-card">
-        <img src="https://randomuser.me/api/portraits/women/77.jpg" alt="Peer Avatar" />
-        <h2>Marie Durand</h2>
-        <p>Teaching: French<br>Learning: Yoga</p>
-        <button class="btn-join" onclick="alert('Join Marie\'s swap')">Swap Now</button>
-      </div>
-      <!-- Add more cards as needed -->
-    </section>
-    <section class="cta-banner">
-      <h2>Start a New Skill Swap Today</h2>
-      <button class="btn-primary" id="banner-signup">Begin Your Journey →</button>
-    </section>
-  </main>
-  <!-- Modal -->
+    <div class="menu-icon" id="menu-icon">☰</div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>
+        Dive Into Skill Swap And <br />
+        Connect Effortlessly With <span class="highlight">Peers!</span>
+      </h1>
+      <p>
+        Excited to learn something new while teaching others what you love?
+        Join Skill Swap today and start connecting with
+        <span class="link" onclick="alert('Explore the feed below!')">like-minded peers!</span>
+      </p>
+      <button class="cta-button" id="cta-join">Get Started →</button>
+    </div>
+    <div class="hero-image">
+      <img src="https://png.pngtree.com/png-clipart/20200701/original/pngtree-remote-team-working-meeting-online-or-work-from-home-png-image_5366337.jpg" alt="Remote team collaboration illustration" />
+    </div>
+  </section>
+
+  <section class="feed" id="feed">
+    <div class="feed-card">
+      <img src="https://randomuser.me/api/portraits/women/50.jpg" alt="Anna avatar">
+      <h3>Anna M.</h3>
+      <p>Teaching: Guitar <br>Learning: Spanish</p>
+      <button class="join-btn" onclick="alert('Joining Anna...')">Join Chat</button>
+    </div>
+    <div class="feed-card">
+      <img src="https://randomuser.me/api/portraits/men/21.jpg" alt="Raj avatar">
+      <h3>Raj Patel</h3>
+      <p>Teaching: Web Dev <br>Learning: Digital Art</p>
+      <button class="join-btn" onclick="alert('Joining Raj...')">Join Chat</button>
+    </div>
+    <div class="feed-card">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sara avatar">
+      <h3>Sara Lee</h3>
+      <p>Teaching: French <br>Learning: Photography</p>
+      <button class="join-btn" onclick="alert('Joining Sara...')">Join Chat</button>
+    </div>
+    <div class="feed-card">
+      <img src="https://randomuser.me/api/portraits/men/30.jpg" alt="Marco avatar">
+      <h3>Marco Rossi</h3>
+      <p>Teaching: Cooking <br>Learning: Coding</p>
+      <button class="join-btn" onclick="alert('Joining Marco...')">Join Chat</button>
+    </div>
+  </section>
+
+  <section class="subsection">
+    <h2>Join Skill Swap and turn passions into expertise, one connection at a time.</h2>
+    <p>Exchange skills, build friendships</p>
+    <button class="cta-button small" id="sub-join">Get Started</button>
+  </section>
+
   <div class="modal" id="modal">
-    <div class="modal-box" id="modal-box">
+    <div class="modal-content" id="modal-content">
       <span class="close-modal" id="close-modal">&times;</span>
     </div>
   </div>
+
   <script>
-    function openModal(mode) {
-      document.getElementById('modal').classList.add('active');
-      let content = '';
-      if (mode === 'signup') {
-        content = `
-          <span class="close-modal" id="close-modal">&times;</span>
-          <h2>Sign Up</h2>
-          <label>Name</label>
-          <input type="text" placeholder="Full Name" />
-          <label>Email</label>
-          <input type="email" placeholder="your@email.com" />
-          <label>Password</label>
-          <input type="password" placeholder="Choose a password" />
-          <button onclick="alert('Account created!')">Sign Up</button>
-          <p><small>Already a member? <a href="#" id="modal-switch-login">Log in</a></small></p>
-        `;
-      } else {
-        content = `
-          <span class="close-modal" id="close-modal">&times;</span>
-          <h2>Log In</h2>
-          <label>Email</label>
-          <input type="email" placeholder="your@email.com" />
-          <label>Password</label>
-          <input type="password" placeholder="••••••••" />
-          <button onclick="alert('Logged In!')">Log In</button>
-          <p><small>New here? <a href="#" id="modal-switch-signup">Sign up</a></small></p>
-        `;
-      }
-      const modalBox = document.getElementById('modal-box');
-      modalBox.innerHTML = content;
+    // Navbar menu for mobile
+    const menuIcon = document.getElementById("menu-icon");
+    const navUl = document.querySelector("nav ul");
+    menuIcon.addEventListener("click", () => {
+      navUl.classList.toggle('mobile-show');
+    });
+    // Modal Functions
+    const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modal-content');
+    const closeBtn = document.getElementById('close-modal');
+    document.getElementById('open-login').addEventListener('click', function(e) {
+      e.preventDefault();
+      modal.classList.add('active');
+      modalContent.innerHTML = `
+        <span class="close-modal" id="close-modal">&times;</span>
+        <h2>Log In to Skill Swap</h2>
+        <label>Email</label>
+        <input type="email" placeholder="your@email.com" />
+        <label>Password</label>
+        <input type="password" placeholder="••••••••" />
+        <button onclick="alert('Logging in...')">Log In</button>
+        <p style="margin-top:1rem;"><small>New here? <a href="#" id="switch-signup" style="color:#7a3cff;text-decoration:underline;">Sign up</a></small></p>
+      `;
       setTimeout(() => {
+        document.getElementById('switch-signup').onclick = function(ev) {
+          ev.preventDefault();
+          showSignup();
+        };
         document.getElementById('close-modal').onclick = function() {
-          document.getElementById('modal').classList.remove('active');
+          modal.classList.remove('active');
         };
-        const switchSignup = document.getElementById('modal-switch-signup');
-        if (switchSignup) switchSignup.onclick = function(e) {
-          e.preventDefault(); openModal('signup');
+      }, 60);
+    });
+    function showSignup() {
+      modal.classList.add('active');
+      modalContent.innerHTML = `
+        <span class="close-modal" id="close-modal">&times;</span>
+        <h2>Sign Up for Skill Swap</h2>
+        <label>Name</label>
+        <input type="text" placeholder="Full Name" />
+        <label>Email</label>
+        <input type="email" placeholder="your@email.com" />
+        <label>Password</label>
+        <input type="password" placeholder="Choose a password" />
+        <button onclick="alert('Account created!')">Sign Up</button>
+        <p style="margin-top:1rem;"><small>Already a member? <a href="#" id="switch-login" style="color:#7a3cff;text-decoration:underline;">Log in</a></small></p>
+      `;
+      setTimeout(() => {
+        document.getElementById('switch-login').onclick = function(ev) {
+          ev.preventDefault();
+          showLogin();
         };
-        const switchLogin = document.getElementById('modal-switch-login');
-        if (switchLogin) switchLogin.onclick = function(e) {
-          e.preventDefault(); openModal('login');
+        document.getElementById('close-modal').onclick = function() {
+          modal.classList.remove('active');
         };
-      }, 50);
+      }, 60);
     }
-    document.getElementById('sidebar-signup').onclick = function() { openModal('signup'); };
-    document.getElementById('sidebar-login').onclick = function() { openModal('login'); };
-    document.getElementById('banner-signup').onclick = function() { openModal('signup'); };
+    document.getElementById('open-signup').onclick = function(e) {
+      e.preventDefault();
+      showSignup();
+    };
+    function showLogin() {
+      document.getElementById('open-login').click();
+    }
+    closeBtn.onclick = function() {
+      modal.classList.remove('active');
+    };
+    document.getElementById('cta-join').onclick = function() {
+      showSignup();
+    };
+    document.getElementById('sub-join').onclick = function() {
+      showSignup();
+    };
   </script>
 </body>
 </html>
