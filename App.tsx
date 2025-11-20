@@ -164,75 +164,74 @@ function App() {
             </button>
           </div>
 
-          <div className="relative flex items-center justify-center">
-            <div className="relative w-full max-w-md h-96">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-cyan-500/10 to-transparent rounded-3xl blur-3xl opacity-80" />
+          <div className="relative">
+            <div className="relative backdrop-blur-xl bg-white/10 rounded-3xl p-8 border border-white/20 shadow-2xl">
+              <div className="absolute -top-6 -right-6 w-32 h-32 bg-gradient-to-br from-orange-400 to-red-400 rounded-full blur-3xl opacity-60 animate-pulse" />
+              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full blur-3xl opacity-60 animate-pulse" />
 
-              <div className="relative h-full flex items-center justify-center">
-                <svg viewBox="0 0 400 400" className="w-full h-full filter drop-shadow-2xl">
-                  <defs>
-                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#3b82f6" stopOpacity="1" />
-                      <stop offset="100%" stopColor="#06b6d4" stopOpacity="1" />
-                    </linearGradient>
-                    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#f97316" stopOpacity="1" />
-                      <stop offset="100%" stopColor="#ec4899" stopOpacity="1" />
-                    </linearGradient>
-                  </defs>
+              <div className="relative bg-gradient-to-br from-blue-500/20 to-cyan-500/20 rounded-2xl p-8 border border-white/10">
+                <div className="flex items-center justify-center mb-6">
+                  <div className="w-32 h-32 bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full flex items-center justify-center shadow-lg">
+                    <Video className="w-16 h-16 text-white" />
+                  </div>
+                </div>
 
-                  <g className="animate-pulse" style={{ animation: 'float 6s ease-in-out infinite' }}>
-                    <circle cx="100" cy="100" r="50" fill="url(#grad1)" opacity="0.9" />
-                    <text x="100" y="110" textAnchor="middle" fontSize="32" fontWeight="bold" fill="white">👨‍💻</text>
-                  </g>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4 backdrop-blur-md bg-white/10 rounded-xl p-4 border border-white/20">
+                    <div className="w-12 h-12 bg-gradient-to-br from-orange-400 to-red-400 rounded-full flex items-center justify-center">
+                      <Book className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-white font-semibold">Live Sessions</p>
+                      <p className="text-gray-300 text-sm">Connect in real-time</p>
+                    </div>
+                  </div>
 
-                  <g className="animate-pulse" style={{ animation: 'float 6s ease-in-out infinite 1s' }}>
-                    <circle cx="300" cy="100" r="50" fill="url(#grad2)" opacity="0.9" />
-                    <text x="300" y="110" textAnchor="middle" fontSize="32" fontWeight="bold" fill="white">🎨</text>
-                  </g>
-
-                  <g className="animate-pulse" style={{ animation: 'float 6s ease-in-out infinite 2s' }}>
-                    <circle cx="100" cy="300" r="50" fill="url(#grad2)" opacity="0.9" />
-                    <text x="100" y="310" textAnchor="middle" fontSize="32" fontWeight="bold" fill="white">🎵</text>
-                  </g>
-
-                  <g className="animate-pulse" style={{ animation: 'float 6s ease-in-out infinite 1.5s' }}>
-                    <circle cx="300" cy="300" r="50" fill="url(#grad1)" opacity="0.9" />
-                    <text x="300" y="310" textAnchor="middle" fontSize="32" fontWeight="bold" fill="white">📚</text>
-                  </g>
-
-                  <circle cx="200" cy="200" r="35" fill="white" opacity="0.15" stroke="url(#grad1)" strokeWidth="2" />
-
-                  <line x1="150" y1="150" x2="250" y2="250" stroke="url(#grad1)" strokeWidth="2" opacity="0.5" />
-                  <line x1="250" y1="150" x2="150" y2="250" stroke="url(#grad2)" strokeWidth="2" opacity="0.5" />
-
-                  <circle cx="200" cy="200" r="25" fill="none" stroke="url(#grad1)" strokeWidth="2" opacity="0.7" />
-
-                  <path d="M 200 175 L 210 195 L 190 195 Z" fill="white" opacity="0.8" />
-                  <path d="M 200 225 L 210 205 L 190 205 Z" fill="white" opacity="0.8" />
-                  <path d="M 175 200 L 195 210 L 195 190 Z" fill="white" opacity="0.8" />
-                  <path d="M 225 200 L 205 210 L 205 190 Z" fill="white" opacity="0.8" />
-                </svg>
-              </div>
-
-              <style>{`
-                @keyframes float {
-                  0%, 100% { transform: translateY(0px); }
-                  50% { transform: translateY(-20px); }
-                }
-              `}</style>
-            </div>
-
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 w-full max-w-sm px-6">
-              <div className="backdrop-blur-lg bg-white/10 rounded-2xl p-4 border border-white/20 text-center">
-                <p className="text-gray-200 text-sm font-medium">
-                  <span className="text-blue-300">Learn</span> what you love • <span className="text-orange-300">Teach</span> what you know
-                </p>
+                  <div className="flex items-center gap-4 backdrop-blur-md bg-white/10 rounded-xl p-4 border border-white/20">
+                    <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-400 rounded-full flex items-center justify-center">
+                      <MessageCircle className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <p className="text-white font-semibold">Chat & Share</p>
+                      <p className="text-gray-300 text-sm">Collaborate seamlessly</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
+        <section className="container mx-auto px-6 py-20">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { name: 'Anna M.', teaching: 'Guitar', learning: 'Spanish', color: 'from-pink-500 to-rose-500' },
+              { name: 'Raj Patel', teaching: 'Web Dev', learning: 'Digital Art', color: 'from-blue-500 to-cyan-500' },
+              { name: 'Sara Lee', teaching: 'French', learning: 'Photography', color: 'from-green-500 to-emerald-500' },
+              { name: 'Marco Rossi', teaching: 'Cooking', learning: 'Coding', color: 'from-orange-500 to-red-500' },
+            ].map((person, index) => (
+              <div
+                key={index}
+                className="group backdrop-blur-xl bg-white/10 rounded-2xl p-6 border border-white/20 hover:border-white/40 transition-all duration-300 hover:transform hover:scale-105 hover:shadow-2xl"
+              >
+                <div className="flex flex-col items-center text-center space-y-4">
+                  <div className={`w-24 h-24 bg-gradient-to-br ${person.color} rounded-full flex items-center justify-center text-white text-2xl font-bold shadow-lg group-hover:shadow-2xl transition-shadow`}>
+                    {person.name.charAt(0)}
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-3">{person.name}</h3>
+                    <p className="text-gray-300 text-sm">
+                      <span className="font-semibold text-blue-400">Teaching:</span> {person.teaching}
+                    </p>
+                    <p className="text-gray-300 text-sm">
+                      <span className="font-semibold text-cyan-400">Learning:</span> {person.learning}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
       </main>
     </div>
   );
