@@ -7,7 +7,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}" />
 </head>
+
 <body>
+  <!-- Canvas background (converted from TSX) -->
+  <canvas id="bg-canvas" class="animated-bg"></canvas>
+
   <aside class="sidebar">
     <div class="brand">
       <img src="https://png.pngtree.com/png-clipart/20200701/original/pngtree-remote-team-working-meeting-online-or-work-from-home-png-image_5366337.jpg" alt="Logo" />
@@ -33,11 +37,13 @@
       {% endif %}
     </div>
   </aside>
+
   <main>
     <header class="main-header">
       <h1>Welcome to Skill Swap</h1>
       <p>Connect with peers, teach your skills, and learn something new every day. Discover ongoing swaps and trending skills below.</p>
     </header>
+
     <section class="skill-grid">
       {% for swap in swaps %}
       <div class="skill-card">
@@ -48,6 +54,7 @@
       </div>
       {% endfor %}
     </section>
+
     <section class="cta-banner">
       <h2>Start a New Skill Swap Today</h2>
       <button class="btn-primary" id="banner-signup" onclick="openModal('signup')">Begin Your Journey →</button>
@@ -60,93 +67,6 @@
     </div>
   </div>
 
-  <script>
-    function joinSwap(swapId) {
-      fetch(`/join-swap/${swapId}`, {method: "POST"})
-      .then(res => res.json())
-      .then(data => alert(data.message || data.error))
-      .catch(() => alert('Error joining swap.'));
-    }
-
-    function openModal(mode) {
-      document.getElementById('modal').classList.add('active');
-      let content = '';
-      if (mode === 'signup') {
-        content = `
-          <span class="close-modal" id="close-modal">&times;</span>
-          <h2>Sign Up</h2>
-          <form id="signup-form">
-            <label>Name</label>
-            <input name="name" type="text" placeholder="Full Name" required />
-            <label>Email</label>
-            <input name="email" type="email" placeholder="your@email.com" required />
-            <label>Password</label>
-            <input name="password" type="password" placeholder="Choose a password" required />
-            <button type="submit">Sign Up</button>
-            <p><small>Already a member? <a href="#" id="modal-switch-login">Log in</a></small></p>
-          </form>
-        `;
-      } else {
-        content = `
-          <span class="close-modal" id="close-modal">&times;</span>
-          <h2>Log In</h2>
-          <form id="login-form">
-            <label>Email</label>
-            <input name="email" type="email" placeholder="your@email.com" required />
-            <label>Password</label>
-            <input name="password" type="password" placeholder="••••••••" required />
-            <button type="submit">Log In</button>
-            <p><small>New here? <a href="#" id="modal-switch-signup">Sign up</a></small></p>
-          </form>
-        `;
-      }
-      const modalBox = document.getElementById('modal-box');
-      modalBox.innerHTML = content;
-
-      setTimeout(() => {
-        document.getElementById('close-modal').onclick = function() {
-          document.getElementById('modal').classList.remove('active');
-        };
-        const switchSignup = document.getElementById('modal-switch-signup');
-        if (switchSignup) switchSignup.onclick = function(e) {
-          e.preventDefault(); openModal('signup');
-        };
-        const switchLogin = document.getElementById('modal-switch-login');
-        if (switchLogin) switchLogin.onclick = function(e) {
-          e.preventDefault(); openModal('login');
-        };
-        // Signup form submit handler
-        const signupForm = document.getElementById('signup-form');
-        if (signupForm) signupForm.onsubmit = function(e) {
-          e.preventDefault();
-          const data = new FormData(signupForm);
-          fetch('/signup', {
-            method: 'POST',
-            body: data
-          }).then(res => {
-            if (res.redirected) window.location.href = res.url;
-            else alert('Signup failed');
-          });
-        };
-        // Login form submit handler
-        const loginForm = document.getElementById('login-form');
-        if (loginForm) loginForm.onsubmit = function(e) {
-          e.preventDefault();
-          const data = new FormData(loginForm);
-          fetch('/login', {
-            method: 'POST',
-            body: data
-          }).then(res => {
-            if (res.redirected) window.location.href = res.url;
-            else alert('Login failed');
-          });
-        };
-      }, 50);
-    }
-
-    document.getElementById('sidebar-signup').onclick = function() { openModal('signup'); };
-    document.getElementById('sidebar-login').onclick = function() { openModal('login'); };
-    document.getElementById('banner-signup').onclick = function() { openModal('signup'); };
-  </script>
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
 </body>
 </html>
